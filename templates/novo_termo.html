@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Novo Termo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo ao Portal de Programação</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('homepage') }}">Início</a></li>
+            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
+            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
+            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
+            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>
+            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
+            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Adicionar Novo Termo</h2>
+
+        <form action="{{ url_for('criar_termo') }}" method="post">
+            <label for="termo">Termo:</label>
+            <input type="text" id="termo" name="termo" required><br><br>
+
+            <label for="definicao">Definição:</label>
+            <input type="text" id="definicao" name="definicao" required><br><br>
+
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <br>
+        <a href="{{ url_for('dicionario') }}">Voltar ao Dicionário</a>
+    </main>
+
+</body>
+</html>

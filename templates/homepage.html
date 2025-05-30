@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprenda Programação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo ao Portal de Programação</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
+            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
+            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
+            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>
+            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
+            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Objetivo do Site</h2>
+        <p>
+            Este site tem como objetivo ensinar os principais conceitos de programação 
+            para iniciantes, abordando temas fundamentais como estruturas de seleção 
+            (condicionais), estruturas de repetição (laços), uso de vetores e matrizes, 
+            além de funções e procedimentos. Através de explicações claras e exemplos práticos, 
+            você poderá desenvolver suas habilidades e se preparar para resolver problemas 
+            computacionais com lógica e eficiência.
+        </p>
+
+        <p><strong>Desenvolvido por:</strong> Sergio Ricardo Maciel Pedrosa Filho</p>
+        <p>
+            <strong>GitHub:</strong> <a href="https://github.com/SrPedrosapy" target="_blank">github.com/sergio-pedrosa</a><br>
+            <strong>Email:</strong> <a href="mailto:sergiopedrosafilho@gmail.com">sergiopedrosafilho@gmail.com</a>
+
+    </main>
+
+</body>
+</html>

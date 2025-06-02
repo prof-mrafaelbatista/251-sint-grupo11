@@ -1,39 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprenda Programação</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "modelo.html" %}
 
-    <header>
-        <h1>Bem-vindo ao Portal de Programação</h1>
-    </header>
+{% block title %}Estruturas de Seleção{% endblock %}
 
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('homepage') }}">Início</a></li>
-            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
-            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
-            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
-            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>            
-            <li><a href="{{ url_for('tratamentos') }}">Tratamento de Exceções</a></li>
-            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
-            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
-        </ul>
-
-<main>
-    <h2>Estruturas de Seleção</h2>
-    <p>
-        Estruturas de seleção são usadas em programação para tomar decisões, executando diferentes blocos de código dependendo de condições específicas. Elas permitem que o programa escolha caminhos alternativos, tornando-o mais dinâmico e inteligente.
-    </p>
-    <p>
-        As estruturas de seleção mais comuns são o <strong>if</strong>, <strong>else</strong> e <strong>elif</strong> (ou <strong>else if</strong> em outras linguagens). Com elas, você pode verificar condições e decidir qual trecho do código será executado.
-    </p>
-    <h3>Exemplo em Python:</h3>
-    <pre>
+{% block content %}
+<h2>Estruturas de Seleção</h2>
+<p>
+    Estruturas de seleção são usadas em programação para tomar decisões, executando diferentes blocos de código dependendo de condições específicas. Elas permitem que o programa escolha caminhos alternativos, tornando-o mais dinâmico e inteligente.
+</p>
+<p>
+    As estruturas de seleção mais comuns são o <strong>if</strong>, <strong>else</strong> e <strong>elif</strong> (ou <strong>else if</strong> em outras linguagens). Com elas, você pode verificar condições e decidir qual trecho do código será executado.
+</p>
+<h3>Exemplo em Python:</h3>
+<pre>
 <code>
 idade = 18
 
@@ -42,14 +20,10 @@ if idade >= 18:
 else:
     print("Você é menor de idade.")
 </code>
-    </pre>
+</pre>
 
-    <h3>Resultado esperado:</h3>
-    <pre>
+<h3>Resultado esperado:</h3>
+<pre>
 Você é maior de idade.
-    </pre>
-</main>
-
-<footer>
-    &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
-</footer>
+</pre>
+{% endblock %}

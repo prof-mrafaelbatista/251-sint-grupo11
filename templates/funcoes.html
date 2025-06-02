@@ -1,39 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprenda Programação</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "modelo.html" %}
 
-    <header>
-        <h1>Bem-vindo ao Portal de Programação</h1>
-    </header>
+{% block title %}Funções e Procedimentos{% endblock %}
 
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('homepage') }}">Início</a></li>
-            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
-            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
-            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
-            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>            
-            <li><a href="{{ url_for('tratamentos') }}">Tratamento de Exceções</a></li>
-            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
-            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
-        </ul>
+{% block content %}
+<h2>Funções e Procedimentos</h2>
+<p>
+    Funções são blocos de código que executam uma tarefa específica e podem retornar um valor. Procedimentos são funções que não retornam valor, apenas executam ações. Em Python, todas as funções são definidas com a palavra-chave <code>def</code>.
+</p>
+<p>
+    Usar funções ajuda a organizar o código, evitar repetições e facilitar a manutenção.
+</p>
 
-<main>
-    <h2>Funções e Procedimentos</h2>
-    <p>
-        Funções são blocos de código que executam uma tarefa específica e podem retornar um valor. Procedimentos são funções que não retornam valor, apenas executam ações. Em Python, todas as funções são definidas com a palavra-chave <code>def</code>.
-    </p>
-    <p>
-        Usar funções ajuda a organizar o código, evitar repetições e facilitar a manutenção.
-    </p>
-    <h3>Exemplo em Python - Função que retorna um valor:</h3>
-    <pre>
+<h3>Exemplo em Python - Função que retorna um valor:</h3>
+<pre>
 <code>
 def soma(a, b):
     return a + b
@@ -41,30 +20,25 @@ def soma(a, b):
 resultado = soma(3, 5)
 print("Soma:", resultado)
 </code>
-    </pre>
+</pre>
 
-    <h3>Resultado esperado:</h3>
-    <pre>
+<h3>Resultado esperado:</h3>
+<pre>
 Soma: 8
-    </pre>
+</pre>
 
-    <h3>Exemplo em Python - Procedimento (função sem retorno explícito):</h3>
-    <pre>
+<h3>Exemplo em Python - Procedimento (função sem retorno explícito):</h3>
+<pre>
 <code>
 def imprimir_mensagem():
     print("Olá, este é um procedimento.")
 
 imprimir_mensagem()
 </code>
-    </pre>
+</pre>
 
-    <h3>Resultado esperado:</h3>
-    <pre>
+<h3>Resultado esperado:</h3>
+<pre>
 Olá, este é um procedimento.
-    </pre>
-</main>
-
-<footer>
-    &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
-</footer>
-
+</pre>
+{% endblock %}

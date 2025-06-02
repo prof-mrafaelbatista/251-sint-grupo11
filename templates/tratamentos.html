@@ -1,41 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tratamento de Exceções</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "modelo.html" %}
 
-    <header>
-        <h1>Bem-vindo ao Portal de Programação</h1>
-    </header>
+{% block title %}Tratamento de Exceções{% endblock %}
 
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('homepage') }}">Início</a></li>
-            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
-            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
-            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
-            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>            
-            <li><a href="{{ url_for('tratamentos') }}">Tratamento de Exceções</a></li>
-            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
-            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
-        </ul>
-    </nav>
+{% block content %}
+<h2>Tratamento de Exceções</h2>
+<p>
+    Em programação, o tratamento de exceções é uma técnica usada para lidar com erros que podem ocorrer durante a execução do programa. Isso evita que o programa pare de funcionar de forma inesperada e permite que você trate os problemas de maneira mais controlada.
+</p>
+<p>
+    Em Python, usamos as palavras-chave <strong>try</strong>, <strong>except</strong>, <strong>else</strong> e <strong>finally</strong> para tratar exceções.
+</p>
 
-    <main>
-        <h2>Tratamento de Exceções</h2>
-        <p>
-            Em programação, o tratamento de exceções é uma técnica usada para lidar com erros que podem ocorrer durante a execução do programa. Isso evita que o programa pare de funcionar de forma inesperada e permite que você trate os problemas de maneira mais controlada.
-        </p>
-        <p>
-            Em Python, usamos as palavras-chave <strong>try</strong>, <strong>except</strong>, <strong>else</strong> e <strong>finally</strong> para tratar exceções.
-        </p>
-
-        <h3>Exemplo em Python:</h3>
-        <pre>
+<h3>Exemplo em Python:</h3>
+<pre>
 <code>
 try:
     numero = int(input("Digite um número: "))
@@ -48,19 +25,12 @@ except ValueError:
 finally:
     print("Operação finalizada.")
 </code>
-        </pre>
+</pre>
 
-        <h3>Resultado esperado (caso o usuário digite 0):</h3>
-        <pre>
+<h3>Resultado esperado (caso o usuário digite 0):</h3>
+<pre>
 Digite um número: 0
 Erro: divisão por zero não é permitida.
 Operação finalizada.
-        </pre>
-    </main>
-
-    <footer>
-        &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
-    </footer>
-
-</body>
-</html>
+</pre>
+{% endblock %}

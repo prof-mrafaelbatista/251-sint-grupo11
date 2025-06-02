@@ -1,45 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprenda Programação</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "modelo.html" %}
 
-    <header>
-        <h1>Bem-vindo ao Portal de Programação</h1>
-    </header>
+{% block title %}Dúvidas e Respostas GEMINI{% endblock %}
 
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('homepage') }}">Início</a></li>
-            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
-            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
-            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
-            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>            
-            <li><a href="{{ url_for('tratamentos') }}">Tratamento de Exceções</a></li>
-            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
-            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
-        </ul>
+{% block content %}
+<h2>Faça sua pergunta sobre programação:</h2>
+<form method="POST">
+    <input type="text" name="pergunta" placeholder="Digite sua dúvida aqui..." required>
+    <button type="submit">Perguntar</button>
+</form>
 
-<main>
-        <h2>Faça sua pergunta sobre programação:</h2>
-        <form method="POST">
-            <input type="text" name="pergunta" placeholder="Digite sua dúvida aqui..." required>
-            <button type="submit">Perguntar</button>
-        </form>
-
-        {% if resposta %}
-        <h3>Resposta da IA:</h3>
-        <div style="background:#fff; padding:15px; border:1px solid #ccc; margin-top:10px;">
-            {{ resposta|safe }}
-        </div>
-        {% endif %}
-</main>
-
-
-<footer>
-    &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
-</footer>
+{% if resposta %}
+<h3>Resposta da IA:</h3>
+<div style="background:#fff; padding:15px; border:1px solid #ccc; margin-top:10px;">
+    {{ resposta|safe }}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,58 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Novo Termo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "modelo.html" %}
 
-    <header>
-        <h1>Bem-vindo ao Portal de Programação</h1>
-    </header>
+{% block title %}Adicionar Termo{% endblock %}
 
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('homepage') }}">Início</a></li>
-            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
-            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
-            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
-            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>            
-            <li><a href="{{ url_for('tratamentos') }}">Tratamento de Exceções</a></li>
-            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
-            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
-        </ul>
-    </nav>
+{% block content %}
+    <h2>Adicionar Novo Termo</h2>
 
-    <main>
-        <h2>Adicionar Novo Termo</h2>
-
-        <form action="{{ url_for('criar_termo') }}" method="post">
-            <div>
-                <label for="termo">Termo:</label><br>
-                <input type="text" id="termo" name="termo" required>
-            </div>
-
-            <br>
-
-            <div>
-                <label for="definicao">Definição:</label><br>
-                <input type="text" id="definicao" name="definicao" required>
-            </div>
-
-            <br>
-
-            <button type="submit">Adicionar</button>
-        </form>
+    <form action="{{ url_for('criar_termo') }}" method="post">
+        <div>
+            <label for="termo">Termo:</label><br>
+            <input type="text" id="termo" name="termo" required>
+        </div>
 
         <br>
-        <a href="{{ url_for('dicionario') }}">Voltar ao Dicionário</a>
-    </main>
 
-</body>
-</html>
+        <div>
+            <label for="definicao">Definição:</label><br>
+            <input type="text" id="definicao" name="definicao" required>
+        </div>
 
-<footer>
-    &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
-</footer>
+        <br>
+
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('dicionario') }}">Voltar ao Dicionário</a>
+{% endblock %}

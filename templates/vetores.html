@@ -1,57 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprenda Programação</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "modelo.html" %}
 
-    <header>
-        <h1>Bem-vindo ao Portal de Programação</h1>
-    </header>
+{% block title %}Vetores e Matrizes{% endblock %}
 
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('homepage') }}">Início</a></li>
-            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
-            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
-            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
-            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>            
-            <li><a href="{{ url_for('tratamentos') }}">Tratamento de Exceções</a></li>
-            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
-            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
-        </ul>
-
-<main>
-    <h2>Vetores e Matrizes</h2>
-    <p>
-        Vetores (ou listas) e matrizes (listas de listas) são estruturas de dados que armazenam múltiplos valores em uma única variável. Vetores são usados para armazenar sequências unidimensionais, enquanto matrizes representam dados em duas dimensões.
-    </p>
-    <p>
-        Em Python, listas são usadas para criar vetores e matrizes de forma simples e eficiente.
-    </p>
-    <h3>Exemplo em Python - Vetor (lista):</h3>
-    <pre>
+{% block content %}
+<h2>Vetores e Matrizes</h2>
+<p>
+    Vetores (ou listas) e matrizes (listas de listas) são estruturas de dados que armazenam múltiplos valores em uma única variável. Vetores são usados para armazenar sequências unidimensionais, enquanto matrizes representam dados em duas dimensões.
+</p>
+<p>
+    Em Python, listas são usadas para criar vetores e matrizes de forma simples e eficiente.
+</p>
+<h3>Exemplo em Python - Vetor (lista):</h3>
+<pre>
 <code>
 numeros = [10, 20, 30, 40, 50]
 for num in numeros:
     print(num)
 </code>
-    </pre>
+</pre>
 
-    <h3>Resultado esperado:</h3>
-    <pre>
+<h3>Resultado esperado:</h3>
+<pre>
 10
 20
 30
 40
 50
-    </pre>
+</pre>
 
-    <h3>Exemplo em Python - Matriz (lista de listas):</h3>
-    <pre>
+<h3>Exemplo em Python - Matriz (lista de listas):</h3>
+<pre>
 <code>
 matriz = [
     [1, 2, 3],
@@ -64,16 +42,12 @@ for linha in matriz:
         print(elemento, end=" ")
     print()
 </code>
-    </pre>
+</pre>
 
-    <h3>Resultado esperado:</h3>
-    <pre>
+<h3>Resultado esperado:</h3>
+<pre>
 1 2 3 
 4 5 6 
 7 8 9 
-    </pre>
-</main>
-
-<footer>
-    &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
-</footer>
+</pre>
+{% endblock %}

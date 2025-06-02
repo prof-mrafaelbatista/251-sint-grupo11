@@ -1,39 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprenda Programação</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "modelo.html" %}
 
-    <header>
-        <h1>Bem-vindo ao Portal de Programação</h1>
-    </header>
+{% block title %}Estruturas de Repetição{% endblock %}
 
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('homepage') }}">Início</a></li>
-            <li><a href="{{ url_for('selecao') }}">Estruturas de Seleção</a></li>
-            <li><a href="{{ url_for('repeticao') }}">Estruturas de Repetição</a></li>
-            <li><a href="{{ url_for('vetores') }}">Vetores e Matrizes</a></li>
-            <li><a href="{{ url_for('funcoes') }}">Funções e Procedimentos</a></li>            
-            <li><a href="{{ url_for('tratamentos') }}">Tratamento de Exceções</a></li>
-            <li><a href="{{ url_for('pergunta') }}">Dúvidas e Respostas GEMINI</a></li>
-            <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
-        </ul>
-
-<main>
-    <h2>Estruturas de Repetição</h2>
-    <p>
-        Estruturas de repetição são usadas para executar um bloco de código várias vezes, enquanto uma condição for verdadeira ou por um número definido de vezes. Isso ajuda a evitar a repetição manual de código e facilita tarefas repetitivas.
-    </p>
-    <p>
-        As estruturas de repetição mais comuns em Python são o <strong>while</strong> e o <strong>for</strong>. Com elas, você pode criar loops controlados por condição ou por uma sequência.
-    </p>
-    <h3>Exemplo em Python com <code>while</code>:</h3>
-    <pre>
+{% block content %}
+<h2>Estruturas de Repetição</h2>
+<p>
+    Estruturas de repetição são usadas para executar um bloco de código várias vezes, enquanto uma condição for verdadeira ou por um número definido de vezes. Isso ajuda a evitar a repetição manual de código e facilita tarefas repetitivas.
+</p>
+<p>
+    As estruturas de repetição mais comuns em Python são o <strong>while</strong> e o <strong>for</strong>. Com elas, você pode criar loops controlados por condição ou por uma sequência.
+</p>
+<h3>Exemplo em Python com <code>while</code>:</h3>
+<pre>
 <code>
 contador = 1
 
@@ -41,18 +19,14 @@ while contador <= 5:
     print("Contador:", contador)
     contador += 1
 </code>
-    </pre>
+</pre>
 
-    <h3>Resultado esperado:</h3>
-    <pre>
+<h3>Resultado esperado:</h3>
+<pre>
 Contador: 1
 Contador: 2
 Contador: 3
 Contador: 4
 Contador: 5
-    </pre>
-</main>
-
-<footer>
-    &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
-</footer>
+</pre>
+{% endblock %}

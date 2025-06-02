@@ -23,5 +23,22 @@
             <li><a href="{{ url_for('dicionario') }}">Dicionário Interativo</a></li>
         </ul>
 
+<main>
+        <h2>Faça sua pergunta sobre programação:</h2>
+        <form method="POST">
+            <input type="text" name="pergunta" placeholder="Digite sua dúvida aqui..." required>
+            <button type="submit">Perguntar</button>
+        </form>
+
+        {% if resposta %}
+        <h3>Resposta da IA:</h3>
+        <div style="background:#fff; padding:15px; border:1px solid #ccc; margin-top:10px;">
+            {{ resposta|safe }}
+        </div>
+        {% endif %}
+</main>
 
 
+<footer>
+    &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
+</footer>

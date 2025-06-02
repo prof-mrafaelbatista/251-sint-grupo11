@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Termo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h2>Editar Termo</h2>
+
+    <form method="post">
+        <label for="termo">Termo:</label><br>
+        <input type="text" name="novo_termo" id="termo" value="{{ termo }}" required><br><br>
+
+        <label for="definicao">Nova Definição:</label><br>
+        <input type="text" name="nova_definicao" id="definicao" value="{{ definicao }}" required><br><br>
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+
+    <br>
+    <a class="retornar" href="{{ url_for('dicionario') }}">Voltar ao Dicionário</a>
+
+    <footer>
+        &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
+    </footer>
+
+</body>
+</html>

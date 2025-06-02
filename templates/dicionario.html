@@ -25,15 +25,42 @@
     </nav>
 
     <main>
+    
         <h2>Dicionário de Termos</h2>
-        <ul>
-            {% for termo in dicionario %}
-                <li><strong>{{ termo[0] }}</strong>: {{ termo[1] }}</li>
-            {% endfor %}
-        </ul>
+
+      <table>
+    <thead>
+        <tr>
+            <th>Termo</th>
+            <th>Definição</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for termo in dicionario %}
+        <tr>
+            <td><strong>{{ termo[0] }}</strong></td>
+            <td>{{ termo[1] }}</td>
+            <td>
+                <form action="{{ url_for('editar_termo', termo=termo[0]) }}" method="get" style="display:inline;">
+                 <button type="submit" class="botao-editar">Editar</button>
+                </form>
+                &nbsp;&nbsp;
+                <form action="{{ url_for('deletar_termo', termo=termo[0]) }}" method="post" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Deseja realmente apagar o termo?')">Apagar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
         <a href="{{ url_for('novo_termo') }}">Adicionar novo termo</a>
     </main>
 
 </body>
 </html>
+
+<footer>
+    &copy; 2025 SITE - GRUPO 11 SINT - SERGIO PEDROSA
+</footer>

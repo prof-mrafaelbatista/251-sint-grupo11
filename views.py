@@ -33,6 +33,10 @@ def vetores():
 def funcoes():
     return render_template("funcoes.html")
 
+@app.route('/tratamentos')
+def tratamentos():
+    return render_template("tratamentos.html")
+
 @app.route('/pergunta', methods=['GET', 'POST'])
 def pergunta():
     resposta = ""
